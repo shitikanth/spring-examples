@@ -2,7 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/bean-factory/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datasource-logging-proxy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/maven-parent/datasource-logging-proxy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/maven-parent/request-scope-example/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/maven-parent/restclient-example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/maven-parent/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/maven-parent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/restclient-example/src/main/java" charset="UTF-8" />
   </component>
 </project>

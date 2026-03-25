@@ -2,23 +2,28 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="restclient-example" />
+        <module name="request-scope-example" />
         <module name="bean-factory" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="restclient-example" target="17" />
+      <module name="datasource-logging-proxy" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bean-factory" options="-parameters" />
+      <module name="datasource-logging-proxy" options="-parameters" />
       <module name="gradle-multi-module.application" options="-parameters" />
       <module name="gradle-multi-module.application.main" options="-parameters" />
       <module name="gradle-multi-module.application.test" options="-parameters" />
+      <module name="request-scope-example" options="-parameters" />
       <module name="restclient-example" options="-parameters" />
     </option>
   </component>

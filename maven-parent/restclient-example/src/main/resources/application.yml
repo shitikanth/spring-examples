@@ -1,0 +1,7 @@
+
+spring:
+  http:
+    serviceclient:
+      greeting:
+        base-url: http://localhost:8080
+        read-timeout: 10s
