@@ -8,8 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="restclient-example" />
-        <module name="request-scope-example" />
+        <module name="spring-cloud-aws-example" />
         <module name="bean-factory" />
+        <module name="request-scope-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="gradle-multi-module.application.test" options="-parameters" />
       <module name="request-scope-example" options="-parameters" />
       <module name="restclient-example" options="-parameters" />
+      <module name="spring-cloud-aws-example" options="-parameters" />
     </option>
   </component>
 </project>

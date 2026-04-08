@@ -5,9 +5,9 @@ import org.springframework.web.service.annotation.GetExchange;
 
 public interface GreetingClient {
 
-	@GetExchange("/greeting")
+	@GetExchange(value = "/greeting", accept = "text/plain")
 	String getGreeting();
 
-	@GetExchange("/greeting")
+	@GetExchange(value = "/greeting", accept = "text/plain")
 	String getGreeting(@RequestParam String name);
 }
