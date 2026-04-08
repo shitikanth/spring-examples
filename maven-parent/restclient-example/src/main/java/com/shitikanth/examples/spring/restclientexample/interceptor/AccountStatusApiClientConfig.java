@@ -11,15 +11,16 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 @EnableConfigurationProperties(AccountStatusApiClientProperties.class)
 class AccountStatusApiClientConfig {
 	@Bean
-	AccountStatusApiClient accountStatusApiClient(RestClient.Builder builder, AccountStatusApiClientProperties properties) {
-		var client = builder
-			.baseUrl(properties.getBaseUrl())
-			.requestInterceptors(interceptors -> {
-				interceptors.add(new AddStandardHeadersRequestInterceptor());
-			})
-			.build();
+	AccountStatusApiClient accountStatusApiClient(
+			RestClient.Builder builder, AccountStatusApiClientProperties properties) {
+		var client = builder.baseUrl(properties.getBaseUrl())
+				.requestInterceptors(interceptors -> {
+					interceptors.add(new AddStandardHeadersRequestInterceptor());
+				})
+				.build();
 		var adapter = RestClientAdapter.create(client);
-		HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+		HttpServiceProxyFactory factory =
+				HttpServiceProxyFactory.builderFor(adapter).build();
 		return factory.createClient(AccountStatusApiClient.class);
 	}
 }

@@ -18,7 +18,7 @@ class SpringCloudAWSExampleApplicationTest {
 			builder.bucket("test");
 		});
 		var result = s3Client.listBuckets();
-		for(Bucket bucket : result.buckets()) {
+		for (Bucket bucket : result.buckets()) {
 			System.out.println(bucket.name());
 		}
 	}

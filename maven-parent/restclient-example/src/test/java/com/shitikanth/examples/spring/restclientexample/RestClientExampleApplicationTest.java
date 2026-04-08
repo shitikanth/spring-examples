@@ -8,6 +8,5 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class RestClientExampleApplicationTest {
 	@Test
-	void contextLoads() {
-	}
+	void contextLoads() {}
 }

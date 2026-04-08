@@ -14,9 +14,9 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 @EnableWireMock
 @SpringBootTest(
-	properties = {
-		"account-status-api.base-url=http://localhost:${wiremock.server.port}",
-	})
+		properties = {
+			"account-status-api.base-url=http://localhost:${wiremock.server.port}",
+		})
 @ContextConfiguration(classes = AccountStatusApiClientTest.TestConfig.class)
 class AccountStatusApiClientTest {
 
@@ -25,13 +25,11 @@ class AccountStatusApiClientTest {
 
 	@Test
 	void contextLoads() {
-		stubFor(get("/accountStatus")
-			.willReturn(okJson("""
+		stubFor(get("/accountStatus").willReturn(okJson("""
 {
 	"status": "OPEN"
 }
-				""")))
-		;
+				""")));
 		var response = client.getAccountStatus(AccountStatusRequest.of("1234"));
 		System.out.println(response);
 	}
@@ -39,6 +37,5 @@ class AccountStatusApiClientTest {
 	@Configuration
 	@ImportAutoConfiguration(RestClientAutoConfiguration.class)
 	@Import(AccountStatusApiClientConfig.class)
-	static class TestConfig {
-	}
+	static class TestConfig {}
 }

@@ -1,6 +1,3 @@
 package com.shitikanth.examples.spring.restclientexample.header;
 
-record MultiplicationResponse(
-	Long result
-) {
-}
+record MultiplicationResponse(Long result) {}

@@ -3,9 +3,8 @@ package com.shitikanth.examples.spring.requestscopeexample;
 class GreetingParams {
 	String name;
 
-	GreetingParams() {
+	GreetingParams() {}
 
-	}
 	String getName() {
 		return name;
 	}

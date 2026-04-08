@@ -16,11 +16,11 @@ class GreetingControllerIT {
 	@Test
 	void test() {
 		mockMvc.get()
-			.uri("/greeting")
-			.header("Accept", "text/plain")
-			.header("X-OSFIN-MODULEID", "12")
-			.exchange()
-			.assertThat()
-			.hasStatusOk();
+				.uri("/greeting")
+				.header("Accept", "text/plain")
+				.header("X-OSFIN-MODULEID", "12")
+				.exchange()
+				.assertThat()
+				.hasStatusOk();
 	}
 }

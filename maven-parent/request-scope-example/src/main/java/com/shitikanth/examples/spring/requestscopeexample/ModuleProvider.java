@@ -1,10 +1,10 @@
 package com.shitikanth.examples.spring.requestscopeexample;
 
+import java.util.Optional;
+
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
-
-import java.util.Optional;
 
 @Component
 @RequestScope

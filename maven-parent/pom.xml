@@ -1,63 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.3</version>
-  </parent>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.0.4</version>
+	</parent>
 
-  <groupId>com.shitikanth.examples.spring</groupId>
-  <artifactId>maven-parent</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>maven-parent</name>
-  <url/>
+	<groupId>com.shitikanth.examples.spring</groupId>
+	<artifactId>maven-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>maven-parent</name>
+	<url/>
 
-  <modules>
-    <module>restclient-example</module>
-    <module>request-scope-example</module>
-    <module>spring-cloud-aws-example</module>
-  </modules>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
 
-  <licenses>
-    <license/>
-  </licenses>
-  <developers>
-    <developer/>
-  </developers>
+	<modules>
+		<module>restclient-example</module>
+		<module>request-scope-example</module>
+		<module>spring-cloud-aws-example</module>
+	</modules>
 
-  <scm>
-    <connection/>
-    <developerConnection/>
-    <tag/>
-    <url/>
-  </scm>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
 
-  <properties>
-    <java.version>21</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring-cloud.version>2025.1.1</spring-cloud.version>
-    <spring-cloud-aws.version>4.0.0</spring-cloud-aws.version>
-  </properties>
+	<properties>
+		<?SORTPOM IGNORE?>
+		<java.version>21</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<?SORTPOM RESUME?>
+		<palantir-java-format.version>2.90.0</palantir-java-format.version>
+		<spotless.version>3.4.0</spotless.version>
+		<spring-cloud-aws.version>4.0.0</spring-cloud-aws.version>
+		<spring-cloud.version>2025.1.1</spring-cloud.version>
+	</properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.awspring.cloud</groupId>
-        <artifactId>spring-cloud-aws-dependencies</artifactId>
-        <version>${spring-cloud-aws.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.awspring.cloud</groupId>
+				<artifactId>spring-cloud-aws-dependencies</artifactId>
+				<version>${spring-cloud-aws.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.diffplug.spotless</groupId>
+					<artifactId>spotless-maven-plugin</artifactId>
+					<version>${spotless.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>com.diffplug.spotless</groupId>
+				<artifactId>spotless-maven-plugin</artifactId>
+				<configuration>
+					<java>
+						<palantirJavaFormat>
+							<version>${palantir-java-format.version}</version>
+							<style>PALANTIR</style>
+						</palantirJavaFormat>
+						<indent>
+							<tabs>true</tabs>
+							<spacesPerTab>4</spacesPerTab>
+						</indent>
+						<importOrder>
+							<order>java,javax,,com.shitikanth,\#</order>
+						</importOrder>
+					</java>
+					<pom>
+						<sortPom>
+							<expandEmptyElements>false</expandEmptyElements>
+							<indentAttribute>schemaLocation</indentAttribute>
+							<nrOfIndentSpace>-1</nrOfIndentSpace>
+							<sortDependencies>scope,groupId,artifactId</sortDependencies>
+							<sortProperties>true</sortProperties>
+						</sortPom>
+					</pom>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

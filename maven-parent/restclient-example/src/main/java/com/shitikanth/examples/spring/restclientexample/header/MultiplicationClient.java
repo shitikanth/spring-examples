@@ -8,11 +8,5 @@ import org.springframework.web.service.annotation.GetExchange;
 interface MultiplicationClient {
 	@GetExchange(value = "/multiply", accept = MediaType.APPLICATION_JSON_VALUE)
 	MultiplicationResponse multiply(
-		@RequestHeader("X-Correlation-Id")
-		String correlationId,
-		@RequestParam
-		Long a,
-		@RequestParam
-		Long b
-	);
+			@RequestHeader("X-Correlation-Id") String correlationId, @RequestParam Long a, @RequestParam Long b);
 }

@@ -21,17 +21,15 @@ class GreetingClientTest {
 
 	@Test
 	void contextLoads() {
-		mockServer.expect(
-			requestTo("/greeting")
-
-		).andRespond(withSuccess("Hello World!", MediaType.TEXT_PLAIN));
+		mockServer.expect(requestTo("/greeting")).andRespond(withSuccess("Hello World!", MediaType.TEXT_PLAIN));
 
 		var greeting = greetingClient.getGreeting();
 		System.out.println(greeting);
 	}
 
 	@Configuration
-	@ImportHttpServices(group = "greeting", value = {GreetingClient.class})
-	static class TestConfig {
-	}
+	@ImportHttpServices(
+			group = "greeting",
+			value = {GreetingClient.class})
+	static class TestConfig {}
 }

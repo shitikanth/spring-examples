@@ -12,7 +12,7 @@ class TestcontainerConfig {
 	@ServiceConnection
 	LocalStackContainer localStackContainer() {
 		return new LocalStackContainer("localstack/localstack:latest")
-			.withServices("s3")
-			.withReuse(true);
+				.withServices("s3")
+				.withReuse(true);
 	}
 }
