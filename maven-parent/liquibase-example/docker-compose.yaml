@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:14-alpine
+    ports:
+      - 5432
+    environment:
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=postgres
+  example:
+    image: liquibase-example:1.0-SNAPSHOT
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres

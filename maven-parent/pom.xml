@@ -27,6 +27,8 @@
 		<module>restclient-example</module>
 		<module>request-scope-example</module>
 		<module>spring-cloud-aws-example</module>
+		<module>encrypted-properties-example</module>
+		<module>liquibase-example</module>
 	</modules>
 
 	<scm>
@@ -50,16 +52,16 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>io.awspring.cloud</groupId>
-				<artifactId>spring-cloud-aws-dependencies</artifactId>
-				<version>${spring-cloud-aws.version}</version>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
+				<groupId>io.awspring.cloud</groupId>
+				<artifactId>spring-cloud-aws-dependencies</artifactId>
+				<version>${spring-cloud-aws.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
